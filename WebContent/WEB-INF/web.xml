@@ -18,7 +18,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>RegistServlet</servlet-name>
-		<url-pattern>/regist.do</url-pattern>
+		<url-pattern>/RegistServlet</url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -27,6 +27,6 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ActiveServlet</servlet-name>
-		<url-pattern>/active.do</url-pattern>
+		<url-pattern>/ActiveServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

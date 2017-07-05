@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath()%>/regist.do" method="post">
+	<form action="RegistServlet" method="post">
 		<tr>
 			<td><label for="username">账号</label></td>
 			<td><input type="text" name="username" /></td>

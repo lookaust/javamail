@@ -1,9 +1,14 @@
 package servlet;
 
+import java.security.GeneralSecurityException;
+
+import javax.mail.MessagingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.omg.Messaging.SyncScopeHelper;
 
 import bean.UserBean;
 import dao.UserDao;
@@ -36,8 +41,13 @@ public class RegistServlet extends HttpServlet {
 		dao.regist(user);
 		dao.closeConn();
 
-		// 发送邮件
-		SendMailUtils.sendMail(email, user.getCode());
+//		// 发送邮件
+//		try {
+//			SendMailUtils.sendMail(email, user.getCode());
+//		} catch (GeneralSecurityException | MessagingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	public void destroy() {

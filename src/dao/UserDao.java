@@ -12,6 +12,7 @@ public class UserDao {
 public static void main(String[] args) {
 	UserDao userDao=new UserDao();
 	userDao.getConn();
+	
 }
 	// 获取数据库连接
 	public void getConn() {
@@ -36,7 +37,7 @@ public static void main(String[] args) {
 		try {
 			String sql = "insert into user(username,password,nickname,email,code) values(?,?,?,?,?)";
 			PreparedStatement pstmt;
-			pstmt = conn.prepareCall(sql);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUsername());
 			pstmt.setString(2, user.getPassword());
 			pstmt.setString(3, user.getNickname());
@@ -55,7 +56,7 @@ public static void main(String[] args) {
 		String sql = "update user set state=1,code=null where code=?";
 		PreparedStatement pstmt;
 		try {
-			pstmt = conn.prepareCall(sql);
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, code);
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
