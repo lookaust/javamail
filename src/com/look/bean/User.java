@@ -1,6 +1,6 @@
 package com.look.bean;
 
-public class UserBean {
+public class User {
 	private Integer id;
 	private String username;
 	private String password;

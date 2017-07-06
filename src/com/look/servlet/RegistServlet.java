@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.look.bean.UserBean;
+import com.look.bean.User;
 import com.look.dao.UserDao;
 import com.look.util.SendMailUtils;
 import com.look.util.UUIDUtils;
@@ -33,7 +33,7 @@ public class RegistServlet extends HttpServlet {
 		String email = request.getParameter("email");
 
 		// 封装数据
-		UserBean user = new UserBean();
+		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);
 		user.setNickname(nickname);

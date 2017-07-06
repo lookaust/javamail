@@ -5,16 +5,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.look.bean.UserBean;
+import com.look.bean.User;
 
 public class UserDao {
 	private static Connection conn;
-public static void main(String[] args) {
-	UserDao userDao=new UserDao();
-	userDao.getConn();
-	userDao.activeByCode("c86c9061961a4204941c28f7b97d121247eee674fd7d4f35930aacf2622dbbc9");
-	userDao.closeConn();
-}
 	// 获取数据库连接
 	public  void getConn() {
 		try {
@@ -33,7 +27,7 @@ public static void main(String[] args) {
 	}
 
 	// 注册
-	public void regist(UserBean user) {
+	public void regist(User user) {
 
 		try {
 			String sql = "insert into user(username,password,nickname,email,code) values(?,?,?,?,?)";
@@ -53,7 +47,7 @@ public static void main(String[] args) {
 
 	// 激活
 	public void activeByCode(String code) {
-		String sql = "update user set state=1 where code=?";
+		String sql = "update user set state=1,code=null where code=?";
 		PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement(sql);
