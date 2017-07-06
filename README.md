@@ -7,7 +7,8 @@
 
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1837782-4dc640e233f489dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-- 注意开启完之后，QQ 邮箱会生成一个授权码，在代码里连接邮箱使用这个授权码而不是原始的邮箱密码，这样可以避免使用明文密码。也可以使用明文密码，但是会有密码泄露的风险。（借用原作者的图吧，省的再截图）
+- 注意开启完之后，QQ 邮箱会生成一个授权码，在代码里连接邮箱使用这个授权码而不是原始的邮箱密码，这样可以避免使用明文密码。也可以使用明文密码，但是会有密码泄露的风险。
+
 **注**
 这里的授权码先记下来，第4步要用到。
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1837782-4195a920b91a9851.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -28,4 +29,4 @@
 - 7、 ActiveServlet（激活账户）
 - 8、 index.jsp（输入界面）
 - 9、 success.jsp（成功界面）
-
+- 10、web.xml（配置servlet的访问路径）
