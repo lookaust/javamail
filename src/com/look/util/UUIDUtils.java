@@ -1,4 +1,4 @@
-package util;
+package com.look.util;
 
 import java.util.UUID;
 

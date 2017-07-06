@@ -1,21 +1,22 @@
-package dao;
+package com.look.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import bean.UserBean;
+import com.look.bean.UserBean;
 
 public class UserDao {
-	private Connection conn;
+	private static Connection conn;
 public static void main(String[] args) {
 	UserDao userDao=new UserDao();
 	userDao.getConn();
-	
+	userDao.activeByCode("c86c9061961a4204941c28f7b97d121247eee674fd7d4f35930aacf2622dbbc9");
+	userDao.closeConn();
 }
 	// 获取数据库连接
-	public void getConn() {
+	public  void getConn() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/javamail";
@@ -52,8 +53,7 @@ public static void main(String[] args) {
 
 	// 激活
 	public void activeByCode(String code) {
-
-		String sql = "update user set state=1,code=null where code=?";
+		String sql = "update user set state=1 where code=?";
 		PreparedStatement pstmt;
 		try {
 			pstmt = conn.prepareStatement(sql);
